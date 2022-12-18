@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using StudentBeheer.Areas.Identity.Data;
 using StudentBeheer.Data;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("StudentBeheerDBContextConnection") ?? throw new InvalidOperationException("Connection string 'StudentBeheerDBContextConnection' not found.");
