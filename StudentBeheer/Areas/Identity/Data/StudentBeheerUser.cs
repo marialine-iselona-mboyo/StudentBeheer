@@ -9,5 +9,8 @@ namespace StudentBeheer.Areas.Identity.Data;
 // Add profile data for application users by adding properties to the StudentBeheerUser class
 public class StudentBeheerUser : IdentityUser
 {
+    public string Firstname { get; set; }
+    public string Lastname { get; set; }
+
 }
 

@@ -24,4 +24,5 @@ public class StudentBeheerDBContext : IdentityDbContext<StudentBeheerUser>
 
     public DbSet<StudentBeheer.Models.Customer> Customer { get; set; }
 
+
 }

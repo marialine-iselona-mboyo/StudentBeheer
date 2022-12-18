@@ -34,7 +34,7 @@ namespace StudentBeheer.Controllers
             }
 
             var shop = await _context.Shop
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (shop == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace StudentBeheer.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name")] Shop shop)
+        public async Task<IActionResult> Create([Bind("Id,Name")] Shop shop)
         {
             if (ModelState.IsValid)
             {
@@ -86,9 +86,9 @@ namespace StudentBeheer.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(char id, [Bind("ID,Name")] Shop shop)
+        public async Task<IActionResult> Edit(char id, [Bind("Id,Name")] Shop shop)
         {
-            if (id != shop.ID)
+            if (id != shop.Id)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace StudentBeheer.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ShopExists(shop.ID))
+                    if (!ShopExists(shop.Id))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace StudentBeheer.Controllers
             }
 
             var shop = await _context.Shop
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (shop == null)
             {
                 return NotFound();
@@ -155,7 +155,7 @@ namespace StudentBeheer.Controllers
 
         private bool ShopExists(char id)
         {
-          return _context.Shop.Any(e => e.ID == id);
+          return _context.Shop.Any(e => e.Id == id);
         }
     }
 }
